@@ -1,18 +1,30 @@
-console.log("HelloWord");
-//$ PHP
-// Khai bao bien
-// let var
-//let const
 
-//let
+// $ PHP
+// let
 
-//var ngay xua
-//
-let name = "hoadv";
-const age = 35;
+// let name = "tuananh";
+// let age = 20;
+// let isStudying = true;
 
-money = 50
-const yearCong =2004;
+// const birtDay = 2006
 
-const yearBach=2006;
-let age = 20;
+// console.log(name);
+
+// // kiểu dữ liệu
+// let greeting1 = "Hello";
+// let greeting2 = "Xin chào";
+
+// // Number
+// let age = 20;
+// let score = 10;
+
+// // Boolean
+// let isStudent = true;
+// let isLoggedIn = false;
+
+// console.log(greeting1);
+// alert("Xin chào JavaScript");
+
+const h1 = document.getElementById("title");
+h1.innerHTML="Danh sách sản phẩm";
+console.log(h1);
