@@ -34,11 +34,11 @@ h1.innerHTML = `Danh sách ${student.name}`;
 
 const tbody = document.getElementById("student");
 console.log(tbody);
-if (tbody) {
   tbody.innerHTML = `
             <tr class="hover:bg-gray-50">
               <td class="px-4 py-2 border border-gray-300">1</td>
               <td class="px-4 py-2 border border-gray-300">${student.name}</td>
+              <td class="px-4 py-2 border border-gray-300">${student.age}</td>
               <td class="px-4 py-2 border border-gray-300">
                 <div class="flex items-center justify-center gap-2">
                   <a
@@ -57,6 +57,37 @@ if (tbody) {
               </td>
             </tr>
           `;
-} else {
-  console.error('Element with id "student" not found');
-}
+//aray danh sach so nhieu
+const numbers =[1,2,3,4];
+const names = ["bach","bach","bach",1,true];
+const students = [
+  { id: 1, name: "bach123",
+     age: 20,
+     email: "a@gmail.com",
+     major: "CNTT" },
+  { id: 2,
+   name: "bach321",
+   age: 22,
+   email: "b@gmail.com",
+   major: "MKT" },
+];
+
+//duyet mảng for,foreach,while
+//javascript: map
+//() => {} : function array
+//function sum(a,b){
+ // return a + b;
+//};
+//const sum2 = (a,b) => {
+ // return a+b;
+//};
+tbody.innerHTML = students
+  .map((item) => `
+    <tr>
+      <td>${item.name}</td>
+      <td>${item.age}</td>
+      <td>${item.email}</td>
+      <td>${item.major}</td>
+    </tr>
+  `)
+  .join("");
