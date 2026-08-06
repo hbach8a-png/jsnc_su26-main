@@ -12,8 +12,7 @@ console.log("Tuổi:", tuoi);
 console.log("Email:", email);
 console.log("Địa chỉ:", diaChi);
 
-const title = "Laptop - Máy tính";
-h1.innerHTML = `Danh sách ${title}`;
+// Title will be set from `student.name` below
 const book = {
   title: "Hoa vang tren co xanh",
   author: "nguyen nhat anh",
@@ -28,3 +27,36 @@ const student = {
 console.log("Student:", student.name);
 console.log("Tuổi sinh viên:", student.age);
 ;
+
+//buoi3
+
+h1.innerHTML = `Danh sách ${student.name}`;
+
+const tbody = document.getElementById("student");
+console.log(tbody);
+if (tbody) {
+  tbody.innerHTML = `
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-2 border border-gray-300">1</td>
+              <td class="px-4 py-2 border border-gray-300">${student.name}</td>
+              <td class="px-4 py-2 border border-gray-300">
+                <div class="flex items-center justify-center gap-2">
+                  <a
+                    href="#"
+                    class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+                  >
+                    Edit
+                  </a>
+
+                  <button
+                    class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+} else {
+  console.error('Element with id "student" not found');
+}
