@@ -142,3 +142,40 @@ axios.get("http://localhost:3000/students").then((res) => {
     })
     .join("");
 });
+function loadStudent(){
+  axios.get("http://localhost:3000/students").then((res) => {
+    const students = res.data;
+    document.getElementById("info").innerHTML = students
+      .map((item) => {
+        return `
+          <tr class="hover:bg-gray-50">
+                <td class="px-4 py-2 border border-gray-300">${item.id}</td>
+                <td class="px-4 py-2 border border-gray-300">
+                  ${item.name}
+                </td>
+                <td class="px-4 py-2 border border-gray-300">
+                  ${item.age}
+                </td>
+                <td class="px-4 py-2 border border-gray-300">
+                <button onclick="deleteStudent(${item.id})">
+                  Xóa
+                </button>
+              </td>
+              </tr>
+      `;
+      })
+      .join("");
+  });
+  }
+
+
+  function deleteStudent(id) {
+    const result = confirm("Xoa");
+
+    if (result) {
+      axios.delete(`http://localhost:3000/students/${id}`).then(() => {
+        loadStudent();
+      });
+    }
+  }
+loadStudent();
